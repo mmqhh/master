@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back"
+
+    tools:context=".MainActivity" >
+<TextView android:id="@+id/youxijiemian"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentTop="true"
+          android:layout_centerHorizontal="true"
+          android:textSize="24sp"
+          android:text="游戏界面"
+          />
+    <com.example.saoleisheji.saoleiView
+          android:id="@+id/saoleiView"
+          android:layout_width="600dip"
+          android:layout_height="380dip" 
+          android:layout_below="@id/youxijiemian"
+          />
+  <ToggleButton 
+          android:id="@+id/sign_change"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@id/saoleiView"
+          android:textOn="插旗子"
+          android:textOff="插旗子"
+          android:checked="false"
+        />
+ <TextView 
+          android:id="@+id/jishi"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:layout_alignParentTop="true"
+          android:textSize="18sp"
+          android:text="开始计时"
+          />
+ <Button  android:id="@+id/start_game"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@id/sign_change"
+          android:text="开始游戏"
+ />
+ <EditText 
+          android:id="@+id/edit_count"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_toRightOf="@id/sign_change"
+          android:layout_below="@id/saoleiView"
+          android:text="" 
+          />
+<Button   android:id="@+id/get_edit_count_button"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:layout_toRightOf="@id/edit_count"
+          android:layout_below="@id/saoleiView"
+          android:text="获取雷数" />
+
+
+    
+<EditText android:id="@+id/edit_hang"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_toRightOf="@id/start_game"
+          android:layout_below="@id/edit_count"
+          android:text="" 
+          />
+<EditText android:id="@+id/edit_lie"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_toRightOf="@id/edit_hang"
+          android:layout_below="@id/edit_count"
+ />
+<Button   android:id="@+id/set_button"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_toRightOf="@id/edit_lie"
+          android:layout_below="@id/get_edit_count_button"
+          android:layout_alignParentRight="true"
+          android:text="设置区域" 
+     />
+    
+
+ 
+</RelativeLayout>

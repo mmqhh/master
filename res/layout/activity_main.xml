@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <TextView
+           android:id="@+id/label"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerHorizontal="true"
+           android:textSize="24sp"
+           android:text="扫雷游戏" />
+<Button 
+           android:id="@+id/intosaolei"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:layout_above="@+id/paihangbang" 
+           android:layout_alignLeft="@+id/paihangbang"
+           android:text="扫雷界面"    
+    />
+
+<Button 
+           android:id="@+id/paihangbang"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:layout_centerHorizontal="true"
+           android:layout_centerInParent="true"
+           android:text="排行榜"    
+    />
+<Button 
+           android:id="@+id/music"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:layout_centerHorizontal="true"
+           android:layout_centerInParent="true"      
+           android:layout_alignLeft="@+id/paihangbang"    
+           android:layout_below="@+id/paihangbang" 
+           android:text="开关音乐"    
+    />
+<EditText    
+           android:id="@+id/edit_block_width"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerHorizontal="true"
+           android:layout_centerInParent="true"      
+           android:layout_below="@id/music"
+           android:textSize="24sp"  
+           android:text="" />
+<Button 
+           android:id="@+id/get_block_width"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerHorizontal="true"
+           android:layout_centerInParent="true"      
+           android:layout_toRightOf="@id/edit_block_width"
+           android:layout_below="@id/music"
+           android:text="格子长度设置"    
+    />
+<TextView
+           android:id="@+id/tishi"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerHorizontal="true"
+           android:layout_centerInParent="true"      
+           android:layout_below="@id/get_block_width"       
+           android:textSize="18sp"
+           android:text="1080p屏幕建议设置成100,720p屏幕建议设置成65"
+            />
+
+
+</RelativeLayout>
