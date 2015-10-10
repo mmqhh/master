@@ -23,6 +23,9 @@
             </intent-filter>
         </activity>
         <activity android:name="saoleijiemian"></activity>  
+                <activity android:name="select_paihang"></activity>  
+        
+                <activity android:name="saoleijiemian_nandu"></activity>  
         <service android:name=".Music">
 <intent-filter>
 <action android:name="com.example.saoleisheji.Music"/>

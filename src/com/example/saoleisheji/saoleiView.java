@@ -10,6 +10,7 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
 
 
 public class saoleiView extends View {
@@ -25,14 +26,16 @@ public class saoleiView extends View {
 	private int leiX = -1;//触控到的雷的行值
 	private int leiY = -1;//触控到的雷的列值
 	private int sign_num=0;//格子周围被插的旗子总数
+	public int all_sign_num=0;//已插旗子总数
 	boolean qizi=false;//用来确定能否插旗子
 
 	private leiDefine saoleiArr [][] = null;//初始化扫雷格子的类
+    TextView left_lei=null;
 
 	public saoleiView(Context context,AttributeSet attrs) {
 		super(context,attrs);
 		// TODO Auto-generated constructor stub
- 
+
 		initSaoleiCanShu();      //初始化扫雷的参数
 		//使用setOnTouchListener，设置监听扫雷区域的触摸屏的操作
 		this.setOnTouchListener(new View.OnTouchListener() {
@@ -61,9 +64,13 @@ public class saoleiView extends View {
 						//改变旗子的状态
 						if(saoleiArr[touchX][touchY].sign()==true){
 							saoleiArr[touchX][touchY].setsign(false);
+							all_sign_num=all_sign_num-1;
+							left_lei.setText("剩余雷数："+String.valueOf(leinum-all_sign_num));
 							saoleiArr[touchX][touchY].setsign_error(false);
 						}else{
 							saoleiArr[touchX][touchY].setsign(true);
+							all_sign_num=all_sign_num+1;
+							left_lei.setText("剩余雷数："+String.valueOf(leinum-all_sign_num));
 							if(saoleiArr[touchX][touchY].leiyes()==false)
 								saoleiArr[touchX][touchY].setsign_error(true);
 						}
@@ -306,6 +313,7 @@ public class saoleiView extends View {
 		   					}
 		   					//调用drawBitmap函数放置图片到相应的坐标中
 		   					canvas.drawBitmap(lei, j*blocks_width, i*blocks_width,null);
+		   					all_sign_num=0;
 		   				}
             
 					else if(gameover==true&&saoleiArr[i][j].getsign_error()==true)
@@ -353,6 +361,7 @@ public class saoleiView extends View {
 		   					//调用drawBitmap函数放置图片到相应的坐标中
 							canvas.drawBitmap(flag, j*blocks_width, i*blocks_width,null);
 						}
+						all_sign_num=0;
 					} else {
 						Bitmap empty = null;
 						if(saoleiArr[i][j].sign()==true){
@@ -397,6 +406,14 @@ public class saoleiView extends View {
      public int get_leinum(){//获取雷数
 	        return leinum;
          }
+     public void set_left_lei(TextView left_lei) {
+ 		this.left_lei = left_lei;
+ 		left_lei.setText("剩余雷数："+String.valueOf(leinum-all_sign_num));
+ 	}
+     public void set_all_sign_num(int set)
+     {
+    	 this.all_sign_num=set;
+     }
      //获取游戏状态
     public boolean getstarting(){
 	        return starting;

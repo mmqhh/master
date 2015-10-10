@@ -12,13 +12,21 @@
            android:layout_centerHorizontal="true"
            android:textSize="24sp"
            android:text="扫雷游戏" />
+ <Button 
+           android:id="@+id/intosaolei_nandu"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:layout_above="@+id/intosaolei" 
+           android:layout_alignLeft="@+id/paihangbang"
+           android:text="扫雷界面_难度部分"    
+    />   
 <Button 
            android:id="@+id/intosaolei"
            android:layout_width="fill_parent"
            android:layout_height="wrap_content"
            android:layout_above="@+id/paihangbang" 
            android:layout_alignLeft="@+id/paihangbang"
-           android:text="扫雷界面"    
+           android:text="扫雷界面——自定义游戏"    
     />
 
 <Button 
@@ -66,7 +74,7 @@
            android:layout_centerInParent="true"      
            android:layout_below="@id/get_block_width"       
            android:textSize="18sp"
-           android:text="1080p屏幕建议设置成100,720p屏幕建议设置成65"
+           android:text="1080p屏幕建议设置成100,720p屏幕建议设置成65,默认设置成65"
             />
 
 

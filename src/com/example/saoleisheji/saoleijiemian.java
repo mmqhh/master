@@ -9,6 +9,8 @@ import java.util.TimerTask;
 
 
 
+
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -32,7 +34,8 @@ public class saoleijiemian extends Activity {
 	ToggleButton toggle;//旗子状态开关按钮
 	saoleiView saoleiView = null;
     TextView jishi=null;
-    
+    TextView left_lei=null;
+
     Button startbtn;//开始按钮
     EditText name;  //记录获胜玩家名字
     
@@ -83,6 +86,8 @@ public class saoleijiemian extends Activity {
 		set_leinum=(Button)findViewById(R.id.get_edit_count_button);
 		leinum=(EditText)findViewById(R.id.edit_count);
 		
+        left_lei=(TextView)findViewById(R.id.left_lei_num);
+        saoleiView.set_left_lei(left_lei);
 
 		
         jishi=(TextView)findViewById(R.id.jishi);
@@ -204,6 +209,8 @@ public class saoleijiemian extends Activity {
 			saoleiView.initSaoleiCanShu();//初始化扫雷格子数组
 			saoleiView.invalidate();//绘制扫雷区域
 			shijian=0;//时间清零
+			saoleiView.set_all_sign_num(0);
+			left_lei.setText(String.valueOf("剩余雷数:"+leishu));
 			jishi.setText("开始计时");
 			count=true;//开始计时
 		}
@@ -266,7 +273,6 @@ public void show_pai_hang()
 	//SharedPreferences的键值列表，键值有分数和玩家两种
 	   String[] score={"num1","num2","num3","num4","num5","num6","num7","num8","num9","num10"};
 	   String[] player={"p1","p2","p3","p4","p5","p6","p7","p8","p9","p10"};
-	   
 	   String[] show =new String[10];//存放需要显示的字符串内容
 	   //临时保存键值score和player的值
 	      String[]    top = new String[10];
@@ -282,6 +288,7 @@ public void show_pai_hang()
 	    	  show[i]="第"+c+"位"+" 姓名:"+top_name[i]+";用时:"+top[i]+"秒";
 	      }
 	      //弹出排行榜的对话框
+
 			AlertDialog.Builder myDialog = new AlertDialog.Builder(
 					saoleijiemian.this);
 			myDialog.setTitle("排行榜");
@@ -322,5 +329,6 @@ public void onClick(DialogInterface dialog,int which) //确认清除排行榜记录
         myDialog.show();
 }
 }
+
 }
 
