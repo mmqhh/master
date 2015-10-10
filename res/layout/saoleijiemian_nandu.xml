@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back"
+
+    tools:context=".MainActivity" >
+<TextView android:id="@+id/youxijiemian"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentTop="true"
+          android:layout_centerHorizontal="true"
+          android:textSize="24sp"
+          android:text="游戏界面"
+          />
+    <com.example.saoleisheji.saoleiView
+          android:id="@+id/saoleiView"
+          android:layout_width="600dip"
+          android:layout_height="380dip" 
+          android:layout_below="@id/youxijiemian"
+          />
+  <ToggleButton 
+          android:id="@+id/sign_change"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@id/saoleiView"
+          android:textOn="插旗子"
+          android:textOff="插旗子"
+          android:checked="false"
+        />
+ <TextView 
+          android:id="@+id/jishi"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:layout_alignParentTop="true"
+          android:textSize="18sp"
+          android:text="开始计时"
+          />
+  <TextView 
+          android:id="@+id/left_lei_num"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentLeft="true"
+          android:layout_alignParentTop="true"
+          android:textSize="18sp"
+          android:text="剩余雷数"
+          />
+ 
+ <Button  android:id="@+id/start_game"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_below="@id/sign_change"
+          android:text="开始游戏"
+ />
+<RadioGroup android:id="@+id/level"
+          android:contentDescription="难度" 
+          android:layout_width="wrap_content" 
+          android:layout_height="wrap_content"
+          android:layout_centerInParent="true"
+          android:layout_below="@id/saoleiView"
+          >
+<RadioButton
+          android:id="@+id/simple"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="初级" 
+          android:checked="true"/>"
+<RadioButton
+          android:id="@+id/mid"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="中级"               />
+<RadioButton
+          android:id="@+id/hard"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="高级"               />
+</RadioGroup>
+          
+
+
+ 
+</RelativeLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+        android:background="@drawable/back"
+    >
+    <TextView
+           android:id="@+id/label"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerHorizontal="true"
+           android:textSize="24sp"
+           android:text="选择排行榜" />
+ <Button 
+           android:id="@+id/simple_paihang"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:layout_above="@+id/mid_paihang" 
+           android:layout_alignLeft="@+id/mid_paihang"
+           android:text="初级排行榜"    
+    />   
+<Button 
+           android:id="@+id/mid_paihang"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:layout_above="@+id/hard_paihang" 
+           android:layout_alignLeft="@+id/hard_paihang"
+           android:text="中级排行榜"    
+    />
+
+<Button 
+           android:id="@+id/hard_paihang"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:layout_centerHorizontal="true"
+           android:layout_centerInParent="true"
+           android:text="高级排行榜"    
+    />
+
+                
+
+</RelativeLayout>
