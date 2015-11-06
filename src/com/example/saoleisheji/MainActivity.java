@@ -38,7 +38,7 @@ public class MainActivity extends Activity {
     int    block_width=65;
 
     private Intent intent = new Intent("com.example.saoleisheji.Music");
-    boolean    state=false;//¿ØÖÆÒôÀÖµÄ²¥·Å×´Ì¬
+    boolean    state=true;//¿ØÖÆÒôÀÖµÄ²¥·Å×´Ì¬
     SharedPreferences pre;
     SharedPreferences.Editor editor;
     SharedPreferences save_block_width;  
@@ -50,7 +50,6 @@ public class MainActivity extends Activity {
 		save_block_width=getSharedPreferences("block_width",Activity.MODE_PRIVATE);
 		block_width_edtior=save_block_width.edit();
 
-		startService(intent);
 		intosaolei= (Button)findViewById(R.id.intosaolei);
 		controlmusic=(Button)findViewById(R.id.music);
 		paihangbang=(Button)findViewById(R.id.paihangbang);

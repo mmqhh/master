@@ -114,6 +114,7 @@ public class saoleiView extends View {
 									//玩家胜利
 									win= true;
 									starting=false;
+									gameover=true;
 								}
 								invalidate();//重新绘图
 							}
@@ -300,7 +301,7 @@ public class saoleiView extends View {
 		super.onDraw(canvas);
 		for (int i = 0; i < hang; i++) {
 			for (int j = 0; j < lie; j++) {
-                  if(gameover == true&&saoleiArr[i][j].leiyes()==true)//判断是否游戏失败和该位置是否有雷
+                  if(gameover == true&&saoleiArr[i][j].leiyes()==true&&win==false)//判断是否游戏失败和该位置是否有雷
 		   				{
 		   					Bitmap lei = null;
 		   					if(i==leiX&&j==leiY){//显示点中雷的格子
