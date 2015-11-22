@@ -118,6 +118,7 @@ public class saoleijiemian_nandu extends Activity{
 					if(shijian>65535)
 					{
 						shijian=0;
+						
 					}
 				}
 				else if((msg.what==0x13))//赢了，弹出玩家记录对话框

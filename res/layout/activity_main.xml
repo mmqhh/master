@@ -47,13 +47,23 @@
            android:layout_below="@+id/paihangbang" 
            android:text="开关音乐"    
     />
+<Button 
+           android:id="@+id/pages"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:layout_centerHorizontal="true"
+           android:layout_centerInParent="true"      
+           android:layout_alignLeft="@+id/paihangbang"    
+           android:layout_below="@id/music"
+           android:text="游戏说明"    
+    />
 <EditText    
            android:id="@+id/edit_block_width"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:layout_centerHorizontal="true"
            android:layout_centerInParent="true"      
-           android:layout_below="@id/music"
+           android:layout_below="@id/pages"
            android:textSize="24sp"  
            android:text="" />
 <Button 
@@ -63,7 +73,7 @@
            android:layout_centerHorizontal="true"
            android:layout_centerInParent="true"      
            android:layout_toRightOf="@id/edit_block_width"
-           android:layout_below="@id/music"
+           android:layout_below="@id/pages"
            android:text="格子长度设置"    
     />
 <TextView

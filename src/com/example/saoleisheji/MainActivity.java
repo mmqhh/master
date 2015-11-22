@@ -32,6 +32,7 @@ public class MainActivity extends Activity {
     Button  paihangbang;//显示排行榜的按钮
     Button   get_wid;
     Button  nandu;    //进入“扫雷游戏难度部分”
+    Button  pages;    //进入游戏说明部分
 
     EditText wid;
     int block_wid;
@@ -49,6 +50,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		save_block_width=getSharedPreferences("block_width",Activity.MODE_PRIVATE);
 		block_width_edtior=save_block_width.edit();
+		pages= (Button)findViewById(R.id.pages);
 
 		intosaolei= (Button)findViewById(R.id.intosaolei);
 		controlmusic=(Button)findViewById(R.id.music);
@@ -60,10 +62,12 @@ public class MainActivity extends Activity {
 		nandu.setOnClickListener(new nClick());
 
         get_wid.setOnClickListener(new wClick());
-
+    
 		paihangbang.setOnClickListener(new pClick());
 		controlmusic.setOnClickListener(new sClick());
 		intosaolei.setOnClickListener(new intoClick());
+		pages.setOnClickListener(new aClick());
+
 	}
 	class wClick implements OnClickListener
 	{ 
@@ -116,6 +120,14 @@ public class MainActivity extends Activity {
 		public void onClick(View v)
 		{//进入扫雷游戏的界面
 			Intent in=new Intent(MainActivity.this,saoleijiemian.class);
+			startActivity(in);
+		}
+	}
+	class aClick implements OnClickListener //进入扫雷游戏界面
+	{ 
+		public void onClick(View v)
+		{//进入扫雷游戏的界面
+			Intent in=new Intent(MainActivity.this,Pages.class);
 			startActivity(in);
 		}
 	}

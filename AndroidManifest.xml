@@ -26,6 +26,8 @@
                 <activity android:name="select_paihang"></activity>  
         
                 <activity android:name="saoleijiemian_nandu"></activity>  
+                        <activity android:name="Pages"></activity>  
+                
         <service android:name=".Music">
 <intent-filter>
 <action android:name="com.example.saoleisheji.Music"/>
